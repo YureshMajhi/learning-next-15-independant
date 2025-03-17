@@ -1,4 +1,6 @@
 "use client";
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -28,6 +30,13 @@ const Navigation = () => {
       >
         Products 2
       </Link>
+      <SignedOut>
+        <SignInButton mode="modal" />
+      </SignedOut>
+
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
     </nav>
   );
 };
